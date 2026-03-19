@@ -86,7 +86,7 @@ _init_state()
 
 # ── Core Pipeline ──────────────────────────────────────────────────────────
 
-@st.cache_data(ttl=60, show_spinner=False)
+@st.cache_data(ttl=3600, show_spinner=False)
 def _fetch_data(symbol: str, interval: str, limit: int, use_cache: bool = True, source: str = "binance"):
     dm = DataManager()
     return dm.get_data(symbol, interval, limit=limit, use_cache=use_cache, source=source)
